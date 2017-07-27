@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS dependentes;
+
+DROP TABLE IF EXISTS clientes;
+
+DROP TABLE IF EXISTS produtos;
+
+DROP TABLE IF EXISTS servicos;
+
+DROP TABLE IF EXISTS quartos;
+
