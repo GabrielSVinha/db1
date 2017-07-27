@@ -1,56 +1,57 @@
 CREATE TABLE quartos(
-  id NUMERIC NOT NULL UNIQUE,
+  quarto_id NUMERIC NOT NULL,
   numero NUMERIC,
   tipo VARCHAR(5),
   vista VARCHAR(10),
   diaria NUMERIC,
-  PRIMARY KEY(id)
+  PRIMARY KEY(quarto_id)
 );
 
 CREATE TABLE clientes(
   nome VARCHAR(15) 	NOT NULL,
-  cpf CHAR(11) 		NOT NULL UNIQUE,
+  cpf CHAR(11) 		NOT NULL,
   dataNascimento TIMESTAMP,
-  sexo CHAR		,
-  endereco VARCHAR	,
+  sexo CHAR(1)		,
+  endereco VARCHAR(100)	,
   telefone CHAR(11)	,
   email VARCHAR(15)	,
   quarto_id NUMERIC NOT NULL,
   PRIMARY KEY(cpf),
   CONSTRAINT quartoUser FOREIGN KEY(quarto_id)
-    REFERENCES quartos(id)
+    REFERENCES quartos(quarto_id)
 );
 
 CREATE TABLE dependentes(
   nome VARCHAR(15) NOT NULL,
-  cpf CHAR(11) NOT NULL UNIQUE,
+  dependente_cpf CHAR(11) NOT NULL,
   dataNascimento TIMESTAMP,
   depCpf CHAR(11),
-  PRIMARY KEY(cpf),
+  PRIMARY KEY(dependente_cpf),
   CONSTRAINT dependenteId FOREIGN KEY(depCpf)
     REFERENCES clientes(cpf)
       ON DELETE CASCADE
 );
 
 CREATE TABLE servicos(
-  id NUMERIC NOT NULL UNIQUE,
-  valor NUMERIC
+  servico_id NUMERIC NOT NULL,
+  valor NUMERIC,
+  PRIMARY KEY(servico_id)
 );
 
 CREATE TABLE produtos(
-  id NUMERIC NOT NULL UNIQUE,
+  produto_id NUMERIC NOT NULL,
   nome VARCHAR(20),
   tipo VARCHAR(11),
   descricao VARCHAR(140),
   quarto_id NUMERIC NOT NULL,
   servico_id NUMERIC NOT NULL,
   valor NUMERIC,
-  PRIMARY KEY(id),
+  PRIMARY KEY(produto_id),
   CONSTRAINT quartoProd FOREIGN KEY(quarto_id)
-    REFERENCES quartos(id)
+    REFERENCES quartos(quarto_id)
       ON DELETE CASCADE,
   CONSTRAINT servicoId FOREIGN KEY(servico_id)
-    REFERENCES servicos(id)
+    REFERENCES servicos(servico_id)
       ON DELETE CASCADE
 );
 
