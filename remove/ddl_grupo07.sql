@@ -1,9 +1,9 @@
 USE [hotel]
 
-ALTER TABLE [dbo].[produtos] DROP CONSTRAINT [servicoId]
-ALTER TABLE [dbo].[produtos] DROP CONSTRAINT [quartoProd]
-ALTER TABLE [dbo].[dependentes] DROP CONSTRAINT [dependenteId]
-ALTER TABLE [dbo].[clientes] DROP CONSTRAINT [quartoUser]
+ALTER TABLE produtos DROP CONSTRAINT [servicoId]
+ALTER TABLE produtos DROP CONSTRAINT [quartoProd]
+ALTER TABLE dependentes DROP CONSTRAINT [dependenteId]
+ALTER TABLE clientes DROP CONSTRAINT [quartoUser]
 
 DROP TABLE IF EXISTS servicos
 DROP TABLE IF EXISTS quartos
