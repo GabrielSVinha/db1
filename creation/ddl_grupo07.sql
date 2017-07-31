@@ -1,4 +1,4 @@
-CREATE TABLE quartos(
+CREATE TABLE Quarto(
   quarto_id NUMERIC NOT NULL,
   numero NUMERIC,
   tipo VARCHAR(10),
@@ -7,7 +7,7 @@ CREATE TABLE quartos(
   PRIMARY KEY(quarto_id)
 );
 
-CREATE TABLE clientes(
+CREATE TABLE Cliente(
   nome VARCHAR(50) 	NOT NULL,
   cpf CHAR(11) 		NOT NULL,
   dataNascimento TIMESTAMP,
@@ -21,7 +21,7 @@ CREATE TABLE clientes(
     REFERENCES quartos(quarto_id)
 );
 
-CREATE TABLE dependentes(
+CREATE TABLE Dependente(
   nome VARCHAR(50) NOT NULL,
   dependente_cpf CHAR(11) NOT NULL,
   dataNascimento TIMESTAMP,
@@ -32,13 +32,13 @@ CREATE TABLE dependentes(
       ON DELETE CASCADE
 );
 
-CREATE TABLE servicos(
+CREATE TABLE Servico(
   servico_id NUMERIC NOT NULL,
   valor NUMERIC,
   PRIMARY KEY(servico_id)
 );
 
-CREATE TABLE produtos(
+CREATE TABLE Produto(
   produto_id NUMERIC NOT NULL,
   nome VARCHAR(50),
   tipo VARCHAR(11),
