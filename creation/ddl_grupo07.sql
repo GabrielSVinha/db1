@@ -55,3 +55,11 @@ CREATE TABLE Produto(
       ON DELETE CASCADE
 );
 
+CREATE TABLE Funcionario(
+  nome VARCHAR(50) 	NOT NULL,
+  cpf CHAR(11) 		NOT NULL,
+  salario               DECIMAL(10,2),
+  data_nascimento       DATE NOT NULL,
+  funcao                VARCHAR(30),
+  PRIMARY KEY(cpf)
+);
