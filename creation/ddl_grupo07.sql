@@ -63,3 +63,10 @@ CREATE TABLE Funcionario(
   funcao                VARCHAR(30),
   PRIMARY KEY(cpf)
 );
+
+CREATE TABLE NotaFiscal(
+  id_nota NUMERIC 	NOT NULL,
+  data_entrada          DATE NOT NULL,
+  data_saida            DATE NOT NULL,
+  valor                 DECIMAL(10,2) NOT NULL
+);
