@@ -1,3 +1,5 @@
+/** ENTIDADES **/
+
 CREATE TABLE Quarto(
   quarto_id NUMERIC NOT NULL,
   numero NUMERIC,
@@ -70,3 +72,66 @@ CREATE TABLE NotaFiscal(
   data_saida            DATE NOT NULL,
   valor                 DECIMAL(10,2) NOT NULL
 );
+
+/* RELACOES */
+
+CREATE TABLE Hospedagem(
+  hospedagem_id NUMERIC NOT NULL,
+  quarto_id NUMERIC NOT NULL,
+  cliente_cpf CHAR(11) NOT NULL,
+  data_inicio DATE NOT NULL,
+  data_fim DATE NOT NULL,
+  PRIMARY KEY(hospedagem_id),
+  CONSTRAINT quarto_hospedagem_id FOREIGN KEY(quarto_id)
+    REFERENCES Quarto(quarto_id)
+      ON DELETE CASCADE,
+  CONSTRAINT cliente_hospedagem_cpf FOREIGN KEY(cliente_cpf)
+    REFERENCES Cliente(cpf)
+      ON DELETE CASCADE
+);
+
+CREATE TABLE Reserva(
+  reserva_id NUMERIC NOT NULL,
+  quarto_id NUMERIC NOT NULL,
+  cliente_cpf CHAR(11) NOT NULL,
+  data_inicio DATE NOT NULL,
+  data_fim DATE NOT NULL,
+  PRIMARY KEY(reserva_id),
+  CONSTRAINT quarto_reserva_id FOREIGN KEY(quarto_id)
+    REFERENCES Quarto(quarto_id)
+      ON DELETE CASCADE,
+  CONSTRAINT cliente_reserva_cpf FOREIGN KEY(cliente_cpf)
+    REFERENCES Cliente(cpf)
+      ON DELETE CASCADE
+);
+
+CREATE TABLE Avaliacao(
+  avaliacao_id NUMERIC NOT NULL,
+  cliente_cpf CHAR(11) NOT NULL,
+  servico_id NUMERIC NOT NULL,
+  nota NUMERIC NOT NULL,
+  comentario VARCHAR(150),
+  PRIMARY KEY(avaliacao_id),
+  CONSTRAINT avaliacao_cliente_cpf FOREIGN KEY(cliente_cpf)
+    REFERENCES Cliente(cpf)
+      ON DELETE CASCADE,
+  CONSTRAINT avaliacao_servico_id FOREIGN KEY(servico_id)
+    REFERENCES Servico(servico_id)
+      ON DELETE CASCADE
+);
+
+CREATE TABLE Venda(
+  venda_id NUMERIC NOT NULL,
+  quarto_id NUMERIC NOT NULL,
+  produto_id NUMERIC NOT NULL,
+  data DATE NOT NULL,
+  quantidade NUMERIC NOT NULL,
+  PRIMARY KEY(venda_id),
+  CONSTRAINT venda_quarto_id FOREIGN KEY(quarto_id)
+    REFERENCES Quarto(quarto_id)
+      ON DELETE CASCADE,
+  CONSTRAINT venda_produto_id FOREIGN KEY(produto_id)
+    REFERENCES Produto(produto_id)
+      ON DELETE CASCADE
+);
+
