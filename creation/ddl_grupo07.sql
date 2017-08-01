@@ -18,7 +18,7 @@ CREATE TABLE Cliente(
   quartoId NUMERIC NOT NULL,
   PRIMARY KEY(cpf),
   CONSTRAINT quartoUser FOREIGN KEY(quartoId)
-    REFERENCES quartos(quarto_id)
+    REFERENCES Quarto(quarto_id)
 );
 
 CREATE TABLE Dependente(
@@ -28,7 +28,7 @@ CREATE TABLE Dependente(
   depCpf CHAR(11),
   PRIMARY KEY(dependente_cpf),
   CONSTRAINT dependenteId FOREIGN KEY(depCpf)
-    REFERENCES clientes(cpf)
+    REFERENCES Cliente(cpf)
       ON DELETE CASCADE
 );
 
@@ -48,10 +48,10 @@ CREATE TABLE Produto(
   valor NUMERIC,
   PRIMARY KEY(produto_id),
   CONSTRAINT quartoProd FOREIGN KEY(quarto_id)
-    REFERENCES quartos(quarto_id)
+    REFERENCES Quarto(quarto_id)
       ON DELETE CASCADE,
   CONSTRAINT servicoId FOREIGN KEY(servico_id)
-    REFERENCES servicos(servico_id)
+    REFERENCES Servico(servico_id)
       ON DELETE CASCADE
 );
 
