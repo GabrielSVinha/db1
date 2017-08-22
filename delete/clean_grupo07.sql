@@ -1,3 +1,4 @@
+DELETE FROM nota_fiscal;
 DELETE FROM equipamento;
 DELETE FROM estacionamento;
 DELETE FROM passeio_turistico;
