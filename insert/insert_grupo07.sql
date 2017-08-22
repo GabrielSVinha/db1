@@ -1,47 +1,47 @@
 -- clientes
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000001', 'KAIO',      '01-20-1995', 'M', 'RUA DAS JABUTICABEIRAS',          100,  'MALVINAS',         '58100000', 'kaio@ccc.ufcg.edu.br');
+VALUES('00000000001', 'KAIO',      '01-20-1995', 'M', 'Rua das Jabuticabeiras',          100,  'MALVINAS',         '58100000', 'kaio@ccc.ufcg.edu.br');
     
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000002', 'LUCAS',     '02-23-1994', 'M', 'RUA DAS UMBURANAS',               523,  'MALVINAS',         '58100000', 'lucas@ccc.ufcg.edu.br');
+VALUES('00000000002', 'LUCAS',     '02-23-1994', 'M', 'Rua das Umburanas',               523,  'MALVINAS',         '58100000', 'lucas@ccc.ufcg.edu.br');
     
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000003', 'GABRIEL',   '03-14-1994', 'M', 'RUA XIQUE-XIQUE',                 1542, 'ROCHA CAVALCANTE', '58100000', 'gabriel@ccc.ufcg.edu.br');
+VALUES('00000000003', 'GABRIEL',   '03-14-1994', 'M', 'Rua Xique-Xique',                 1542, 'ROCHA CAVALCANTE', '58100000', 'gabriel@ccc.ufcg.edu.br');
     
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000004', 'ITALO',     '04-12-1995', 'M', 'RUA RECIFE',                      12,   'LIBERDADE',        '58100000', 'italo@ccc.ufcg.edu.br');
+VALUES('00000000004', 'ITALO',     '04-12-1995', 'M', 'Rua Recife',                      12,   'LIBERDADE',        '58100000', 'italo@ccc.ufcg.edu.br');
     
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000005', 'JAAZIEL',   '05-05-1992', 'M', 'RUA MACIEL PINHEIRO',             227,  'CENTRO',           '58100000', 'jaaziel@ccc.ufcg.edu.br');
+VALUES('00000000005', 'JAAZIEL',   '05-05-1992', 'M', 'Rua Aprigio Pereira Nepomuceno',  227,  'CRUZEIRO',           '58100000', 'jaaziel@ccc.ufcg.edu.br');
     
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000006', 'ALEXANDRO', '06-16-1993', 'M', 'AV MAL FLORIANO PEIXOTO',         450,  'SAO JOSE',         '58100000', 'alexandro@ccc.ufcg.edu.br');
+VALUES('00000000006', 'ALEXANDRO', '06-16-1993', 'M', 'Av Mal Floriano Peixoto',         450,  'SAO JOSE',         '58100000', 'alexandro@ccc.ufcg.edu.br');
     
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000007', 'FILIPE',    '07-15-1995', 'M', 'AV ALMIRANTE BARROSO',            221,  'QUARENTA',         '58100000', 'filipe@ccc.ufcg.edu.br');
+VALUES('00000000007', 'FILIPE',    '07-15-1995', 'M', 'Av Almirante Barroso',            221,  'QUARENTA',         '58100000', 'filipe@ccc.ufcg.edu.br');
     
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000008', 'ZEUS',      '08-30-1990', 'M', 'RUA RIO DE JANEIRO',              75,   'LIBERDADE',        '58100000', 'zeus@ccc.ufcg.edu.br');
+VALUES('00000000008', 'ZEUS',      '08-30-1990', 'M', 'Rua Rio de Janeiro',              75,   'LIBERDADE',        '58100000', 'zeus@ccc.ufcg.edu.br');
     
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000009', 'VANDERLAN', '09-29-1992', 'M', 'RUA OLINDINA PEREIRA DOS SANTOS', 97,   'MALVINAS',         '58100000', 'vanderlan@ccc.ufcg.edu.br');
+VALUES('00000000009', 'VANDERLAN', '09-29-1992', 'M', 'Rua Olindina Pereira dos Santos', 97,   'MALVINAS',         '58100000', 'vanderlan@ccc.ufcg.edu.br');
     
 INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES('00000000010', 'DIEGO',     '10-03-1992', 'M', 'RUA CECILIA DE ARAUJO',           556,  'TRES IRMAS',       '58100000', 'diego@ccc.ufcg.edu.br');
+VALUES('00000000010', 'DIEGO',     '10-03-1992', 'M', 'Rua Cecilia de Araujo',           556,  'TRES IRMAS',       '58100000', 'diego@ccc.ufcg.edu.br');
 
 
 -- quarto
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(1, 1, 'Suíte', 'Frontal', 100.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(2, 2, 'Suíte', 'Lateral', 100.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(3, 3, 'Cobertura', 'Cobertura', 200.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(4, 4, 'Cobertura', 'Frontal', 200.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(5, 5, 'Presidencial', 'Plana', 300.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(1, 101, 'Suíte', 'Frontal', 100.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(2, 102, 'Suíte', 'Lateral', 100.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(3, 103, 'Cobertura', 'Cobertura', 200.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(4, 104, 'Cobertura', 'Frontal', 200.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(5, 105, 'Presidencial', 'Plana', 300.00);
 
 -- funcionario
 INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES('00000000011', 'THIAGO',    600.00,  '03-30-1980', 'Faxineiro Auxiliar');
 INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES('00000000012', 'MATHEUS',   650.00,  '12-27-1981', 'Faxineiro');
 INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES('00000000013', 'FRANKLIN',  700.00,  '07-05-1982', 'Faxineiro');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES('00000000014', 'EVERTON',   700.00,  '06-07-1983', 'Zelador');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES('00000000014', 'EVERTON',   700.00,  '06-07-1983', 'Bartender');
 INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES('00000000015', 'DALTON',    700.00,  '11-22-1984', 'Zelador');
 INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES('00000000016', 'JOAO',      800.00,  '10-14-1980', 'Recepcionista');
 INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES('00000000017', 'JORGE',     400.00,  '06-17-1981', 'Garçom');
@@ -95,7 +95,7 @@ INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('06-16
 INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('01-20-2016', '02-20-2016', '00000000004', 4);
 INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('07-15-2016', '07-22-2016', '00000000005', 5);
 INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('12-13-2016', '12-19-2016', '00000000006', 1);
-INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('03-10-2017', '03-19-2017', '00000000007', 2);
+INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('03-10-2016', '03-19-2016', '00000000007', 2);
 INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('01-07-2016', '01-10-2016', '00000000008', 3);
 INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('06-09-2017', '08-09-2017', '00000000009', 4);
 INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('12-30-2017', '01-07-2018', '00000000010', 5);
@@ -158,6 +158,9 @@ INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(3, '0000
 INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(4, '00000000004', 9.5, 'ADOREI, PRETENDO REPETIR');
 INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(5, '00000000005', 3,   'nao gostei, a comida estava fria');
 INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(6, '00000000006', 6,   'nao sei se volto mais vezes, mas o servico estava bom');
+INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(3, '00000000007', 3,   'nao gostei');
+INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(4, '00000000008', 7,   'foi bom');
+INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(5, '00000000009', 9,   'TOP 🔝');
 
 -- telefone
 INSERT INTO telefone(telefone, cpf_cliente) VALUES('83998647582', '00000000001');
@@ -171,7 +174,7 @@ INSERT INTO telefone(telefone, cpf_cliente) VALUES('11946574820', '00000000008')
 INSERT INTO telefone(telefone, cpf_cliente) VALUES('21961728304', '00000000009');
 INSERT INTO telefone(telefone, cpf_cliente) VALUES('87998162374', '00000000010');
 
--- ar condicionado
+-- equipamento
 INSERT INTO equipamento(equipamento, id_quarto) VALUES('ar condicionado', 1);
 INSERT INTO equipamento(equipamento, id_quarto) VALUES('ar condicionado', 2);
 INSERT INTO equipamento(equipamento, id_quarto) VALUES('ar condicionado', 3);
