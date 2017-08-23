@@ -24,4 +24,8 @@ DELETE FROM funcionario;
 DELETE FROM quarto;
 DELETE FROM cliente;
 
-DROP SEQUENCE cpf_seq;
+DROP SEQUENCE cpfSeq;
+DROP SEQUENCE quartoIdSeq;
+DROP SEQUENCE prodIdSeq;
+DROP SEQUENCE servIdSeq;
+DROP SEQUENCE nfIdSeq;
