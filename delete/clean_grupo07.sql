@@ -23,3 +23,5 @@ DELETE FROM dependente;
 DELETE FROM funcionario;
 DELETE FROM quarto;
 DELETE FROM cliente;
+
+DROP SEQUENCE cpf_seq;
