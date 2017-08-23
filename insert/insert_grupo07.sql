@@ -1,5 +1,5 @@
--- Criando sequence para o cpf
-CREATE SEQUENCE cpf_seq
+-- Criando sequences
+CREATE SEQUENCE cpfSeq
     MINVALUE 1
     MAXVALUE 99999999999
     INCREMENT BY 1
@@ -7,41 +7,6 @@ CREATE SEQUENCE cpf_seq
     ORDER
     CYCLE;
 
--- Inserts abaixo
-
---- clientes
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'KAIO',      '01-20-1995', 'M', 'Rua das Jabuticabeiras',          100,  'MALVINAS',         '58100000', 'kaio@ccc.ufcg.edu.br');
-    
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'LUCAS',     '02-23-1994', 'M', 'Rua das Umburanas',               523,  'MALVINAS',         '58100000', 'lucas@ccc.ufcg.edu.br');
-    
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'GABRIEL',   '03-14-1994', 'M', 'Rua Xique-Xique',                 1542, 'ROCHA CAVALCANTE', '58100000', 'gabriel@ccc.ufcg.edu.br');
-    
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'ITALO',     '04-12-1995', 'M', 'Rua Recife',                      12,   'LIBERDADE',        '58100000', 'italo@ccc.ufcg.edu.br');
-    
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'JAAZIEL',   '05-05-1992', 'M', 'Rua Aprigio Pereira Nepomuceno',  227,  'CRUZEIRO',           '58100000', 'jaaziel@ccc.ufcg.edu.br');
-    
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'ALEXANDRO', '06-16-1993', 'M', 'Av Mal Floriano Peixoto',         450,  'SAO JOSE',         '58100000', 'alexandro@ccc.ufcg.edu.br');
-    
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'FILIPE',    '07-15-1995', 'M', 'Av Almirante Barroso',            221,  'QUARENTA',         '58100000', 'filipe@ccc.ufcg.edu.br');
-    
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'ZEUS',      '08-30-1990', 'M', 'Rua Rio de Janeiro',              75,   'LIBERDADE',        '58100000', 'zeus@ccc.ufcg.edu.br');
-    
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'VANDERLAN', '09-29-1992', 'M', 'Rua Olindina Pereira dos Santos', 97,   'MALVINAS',         '58100000', 'vanderlan@ccc.ufcg.edu.br');
-    
-INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
-VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'DIEGO',     '10-03-1992', 'M', 'Rua Cecilia de Araujo',           556,  'TRES IRMAS',       '58100000', 'diego@ccc.ufcg.edu.br');
-
-
---- quarto
 CREATE SEQUENCE quartoIdSeq
   MINVALUE 1
   INCREMENT BY 1
@@ -49,32 +14,13 @@ CREATE SEQUENCE quartoIdSeq
   ORDER 
   NOCYCLE;
 
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 101, 'Suíte', 'Frontal', 100.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 102, 'Suíte', 'Lateral', 100.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 103, 'Cobertura', 'Cobertura', 200.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 104, 'Cobertura', 'Frontal', 200.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 105, 'Presidencial', 'Plana', 300.00);
+CREATE SEQUENCE prodIdSeq
+  MINVALUE 1
+  INCREMENT BY 1
+  START WITH 1
+  ORDER
+  NOCYCLE;
 
---- funcionario
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'THIAGO',    600.00,  '03-30-1980', 'Faxineiro Auxiliar');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'MATHEUS',   650.00,  '12-27-1981', 'Faxineiro');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'FRANKLIN',  700.00,  '07-05-1982', 'Faxineiro');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'EVERTON',   700.00,  '06-07-1983', 'Bartender');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'DALTON',    700.00,  '11-22-1984', 'Zelador');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'JOAO',      800.00,  '10-14-1980', 'Recepcionista');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'JORGE',     400.00,  '06-17-1981', 'Garçom');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'ELIANE',    1700.00, '07-20-1982', 'Segurança');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'ANDREY',    1700.00, '02-09-1983', 'Segurança');
-INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'JOSEANA',   1700.00, '05-01-1984', 'Segurança');
-
---- dependente
-INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), '00000000001', 'ELMAR',    '03-20-1980');
-INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), '00000000002', 'BAPTISTA', '01-07-1981');
-INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), '00000000003', 'EANES',    '12-18-1982');
-INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), '00000000004', 'PATRICIA', '07-10-1983');
-INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), '00000000005', 'KYLLER',   '05-02-1989');
-
---- servico
 CREATE SEQUENCE servIdSeq
   MINVALUE 1
   INCREMENT BY 1
@@ -82,6 +28,74 @@ CREATE SEQUENCE servIdSeq
   ORDER
   NOCYCLE;
 
+CREATE SEQUENCE nfIdSeq
+  MINVALUE 1
+  MAXVALUE 99999
+  START WITH 1
+  INCREMENT BY 1
+  ORDER 
+  NOCYCLE;
+-- Inserts abaixo
+
+--- clientes
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'KAIO',      '01-20-1995', 'M', 'Rua das Jabuticabeiras',          100,  'MALVINAS',         '58100000', 'kaio@ccc.ufcg.edu.br');
+    
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'LUCAS',     '02-23-1994', 'M', 'Rua das Umburanas',               523,  'MALVINAS',         '58100000', 'lucas@ccc.ufcg.edu.br');
+    
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'GABRIEL',   '03-14-1994', 'M', 'Rua Xique-Xique',                 1542, 'ROCHA CAVALCANTE', '58100000', 'gabriel@ccc.ufcg.edu.br');
+    
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'ITALO',     '04-12-1995', 'M', 'Rua Recife',                      12,   'LIBERDADE',        '58100000', 'italo@ccc.ufcg.edu.br');
+    
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'JAAZIEL',   '05-05-1992', 'M', 'Rua Aprigio Pereira Nepomuceno',  227,  'CRUZEIRO',           '58100000', 'jaaziel@ccc.ufcg.edu.br');
+    
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'ALEXANDRO', '06-16-1993', 'M', 'Av Mal Floriano Peixoto',         450,  'SAO JOSE',         '58100000', 'alexandro@ccc.ufcg.edu.br');
+    
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'FILIPE',    '07-15-1995', 'M', 'Av Almirante Barroso',            221,  'QUARENTA',         '58100000', 'filipe@ccc.ufcg.edu.br');
+    
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'ZEUS',      '08-30-1990', 'M', 'Rua Rio de Janeiro',              75,   'LIBERDADE',        '58100000', 'zeus@ccc.ufcg.edu.br');
+    
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'VANDERLAN', '09-29-1992', 'M', 'Rua Olindina Pereira dos Santos', 97,   'MALVINAS',         '58100000', 'vanderlan@ccc.ufcg.edu.br');
+    
+INSERT INTO cliente(cpf, nome, data_nascimento, sexo, rua, numero, bairro, cep, email)
+VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'DIEGO',     '10-03-1992', 'M', 'Rua Cecilia de Araujo',           556,  'TRES IRMAS',       '58100000', 'diego@ccc.ufcg.edu.br');
+
+
+--- quarto
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 101, 'Suíte', 'Frontal', 100.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 102, 'Suíte', 'Lateral', 100.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 103, 'Cobertura', 'Cobertura', 200.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 104, 'Cobertura', 'Frontal', 200.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 105, 'Presidencial', 'Plana', 300.00);
+
+--- funcionario
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'THIAGO',    600.00,  '03-30-1980', 'Faxineiro Auxiliar');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'MATHEUS',   650.00,  '12-27-1981', 'Faxineiro');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'FRANKLIN',  700.00,  '07-05-1982', 'Faxineiro');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'EVERTON',   700.00,  '06-07-1983', 'Bartender');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'DALTON',    700.00,  '11-22-1984', 'Zelador');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'JOAO',      800.00,  '10-14-1980', 'Recepcionista');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'JORGE',     400.00,  '06-17-1981', 'Garçom');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'ELIANE',    1700.00, '07-20-1982', 'Segurança');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'ANDREY',    1700.00, '02-09-1983', 'Segurança');
+INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), 'JOSEANA',   1700.00, '05-01-1984', 'Segurança');
+
+--- dependente
+INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), '00000000001', 'ELMAR',    '03-20-1980');
+INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), '00000000002', 'BAPTISTA', '01-07-1981');
+INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), '00000000003', 'EANES',    '12-18-1982');
+INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), '00000000004', 'PATRICIA', '07-10-1983');
+INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpfSeq.nextval, 'FM00000000000'), '00000000005', 'KYLLER',   '05-02-1989');
+
+--- servico
 INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  73);
 INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  44);
 INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  85);
@@ -156,12 +170,6 @@ INSERT INTO lavanderia(id_lavanderia)   VALUES(3);
 INSERT INTO bar(id_bar)                 VALUES(4);
 
 --- produto
-CREATE SEQUENCE prodIdSeq
-  MINVALUE 1
-  INCREMENT BY 1
-  START WITH 1
-  ORDER
-  NOCYCLE;
 INSERT INTO produto(id_produto, nome, descricao, valor)                 VALUES(prodIdSeq.nextval, 'Rolo de Papel',     'Para se limpar',               5.00);
 INSERT INTO produto(id_produto, nome, descricao, valor)                 VALUES(prodIdSeq.nextval, 'Escova de Dente',   'Para escovar os dentes',       2.00);
 INSERT INTO produto(id_produto, nome, descricao, valor)                 VALUES(prodIdSeq.nextval, 'Shampoo',           'Para lavar o cabelo',          8.00);
@@ -235,13 +243,6 @@ INSERT INTO estacionamento(id_estacionamento) VALUES(29);
 INSERT INTO estacionamento(id_estacionamento) VALUES(30);
 
 --- nota_fiscal
-CREATE SEQUENCE nfIdSeq
-  MINVALUE 1
-  MAXVALUE 99999
-  START WITH 1
-  INCREMENT BY 1
-  ORDER 
-  NOCYCLE;
 INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000001', 1, '03-30-2016', '04-03-2016', 616);
 INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000002', 2, '01-07-2016', '01-28-2016', 2268);
 INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000003', 3, '06-16-2017', '06-17-2017', 1328);
