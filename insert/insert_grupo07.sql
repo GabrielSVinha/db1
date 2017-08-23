@@ -42,11 +42,18 @@ VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'DIEGO',     '10-03-1992', 'M'
 
 
 --- quarto
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(1, 101, 'Suíte', 'Frontal', 100.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(2, 102, 'Suíte', 'Lateral', 100.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(3, 103, 'Cobertura', 'Cobertura', 200.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(4, 104, 'Cobertura', 'Frontal', 200.00);
-INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(5, 105, 'Presidencial', 'Plana', 300.00);
+CREATE SEQUENCE quartoIdSeq
+  MINVALUE 1
+  INCREMENT BY 1
+  START WITH 1
+  ORDER 
+  NOCYCLE;
+
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 101, 'Suíte', 'Frontal', 100.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 102, 'Suíte', 'Lateral', 100.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 103, 'Cobertura', 'Cobertura', 200.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 104, 'Cobertura', 'Frontal', 200.00);
+INSERT INTO quarto(id_quarto, numero, tipo, vista, diaria) VALUES(quartoIdSeq.nextval, 105, 'Presidencial', 'Plana', 300.00);
 
 --- funcionario
 INSERT INTO funcionario(cpf, nome, salario, data_nasc, funcao) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), 'THIAGO',    600.00,  '03-30-1980', 'Faxineiro Auxiliar');
@@ -68,36 +75,43 @@ INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpf_seq.nex
 INSERT INTO dependente(cpf, titular, nome, data_nasc) VALUES(TO_CHAR(cpf_seq.nextval, 'FM00000000000'), '00000000005', 'KYLLER',   '05-02-1989');
 
 --- servico
-INSERT INTO servico(id_servico, valor) VALUES(1,  73);
-INSERT INTO servico(id_servico, valor) VALUES(2,  44);
-INSERT INTO servico(id_servico, valor) VALUES(3,  85);
-INSERT INTO servico(id_servico, valor) VALUES(4,  38);
-INSERT INTO servico(id_servico, valor) VALUES(5,  51);
-INSERT INTO servico(id_servico, valor) VALUES(6,  62);
-INSERT INTO servico(id_servico, valor) VALUES(7,  39);
-INSERT INTO servico(id_servico, valor) VALUES(8,  40);
-INSERT INTO servico(id_servico, valor) VALUES(9,  59);
-INSERT INTO servico(id_servico, valor) VALUES(10, 18);
-INSERT INTO servico(id_servico, valor) VALUES(11, 100);
-INSERT INTO servico(id_servico, valor) VALUES(12, 200);
-INSERT INTO servico(id_servico, valor) VALUES(13, 800);
-INSERT INTO servico(id_servico, valor) VALUES(14, 400);
-INSERT INTO servico(id_servico, valor) VALUES(15, 150);
-INSERT INTO servico(id_servico, valor) VALUES(16, 20);
-INSERT INTO servico(id_servico, valor) VALUES(17, 20);
-INSERT INTO servico(id_servico, valor) VALUES(18, 20);
-INSERT INTO servico(id_servico, valor) VALUES(19, 20);
-INSERT INTO servico(id_servico, valor) VALUES(20, 20);
-INSERT INTO servico(id_servico, valor) VALUES(21, 3);
-INSERT INTO servico(id_servico, valor) VALUES(22, 3);
-INSERT INTO servico(id_servico, valor) VALUES(23, 3);
-INSERT INTO servico(id_servico, valor) VALUES(24, 3);
-INSERT INTO servico(id_servico, valor) VALUES(25, 3);
-INSERT INTO servico(id_servico, valor) VALUES(26, 3);
-INSERT INTO servico(id_servico, valor) VALUES(27, 3);
-INSERT INTO servico(id_servico, valor) VALUES(28, 3);
-INSERT INTO servico(id_servico, valor) VALUES(29, 3);
-INSERT INTO servico(id_servico, valor) VALUES(30, 3);
+CREATE SEQUENCE servIdSeq
+  MINVALUE 1
+  INCREMENT BY 1
+  START WITH 1
+  ORDER
+  NOCYCLE;
+
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  73);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  44);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  85);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  38);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  51);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  62);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  39);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  40);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval,  59);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 18);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 100);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 200);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 800);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 400);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 150);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 20);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 20);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 20);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 20);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 20);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
+INSERT INTO servico(id_servico, valor) VALUES(servIdSeq.nextval, 3);
 
 --- reserva
 INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('03-30-2016', '04-03-2016', '00000000001', 1);
@@ -111,7 +125,7 @@ INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('01-07
 INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('06-09-2017', '08-09-2017', '00000000009', 4);
 INSERT INTO reserva(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('12-30-2017', '01-07-2018', '00000000010', 5);
 
---- hospedagem
+--- hospedagem 
 INSERT INTO hospedagem(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('03-30-2016', '04-03-2016', '00000000001', 1);
 INSERT INTO hospedagem(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('01-07-2016', '01-28-2016', '00000000002', 2);
 INSERT INTO hospedagem(data_inicio, data_fim, cpf_cliente, id_quarto) VALUES('06-16-2017', '06-17-2017', '00000000003', 3);
@@ -142,13 +156,19 @@ INSERT INTO lavanderia(id_lavanderia)   VALUES(3);
 INSERT INTO bar(id_bar)                 VALUES(4);
 
 --- produto
-INSERT INTO produto(id_produto, nome, descricao, valor)                 VALUES(1, 'Rolo de Papel',     'Para se limpar',               5.00);
-INSERT INTO produto(id_produto, nome, descricao, valor)                 VALUES(2, 'Escova de Dente',   'Para escovar os dentes',       2.00);
-INSERT INTO produto(id_produto, nome, descricao, valor)                 VALUES(3, 'Shampoo',           'Para lavar o cabelo',          8.00);
-INSERT INTO produto(id_produto, nome, descricao, valor, id_frigobar)    VALUES(4, 'Chocolate',         'Gostoso',                      20.00, 2);
-INSERT INTO produto(id_produto, nome, descricao, valor, id_bar)         VALUES(5, 'Absolut Vodka',     'DRINK ME!',                    80.00, 4);
-INSERT INTO produto(id_produto, nome, valor, id_frigobar)               VALUES(6, 'Masculinidade',     1000.00, 2);
-INSERT INTO produto(id_produto, nome, valor, id_lavanderia)             VALUES(7, 'Roupa Limpa',       10.00, 3);
+CREATE SEQUENCE prodIdSeq
+  MINVALUE 1
+  INCREMENT BY 1
+  START WITH 1
+  ORDER
+  NOCYCLE;
+INSERT INTO produto(id_produto, nome, descricao, valor)                 VALUES(prodIdSeq.nextval, 'Rolo de Papel',     'Para se limpar',               5.00);
+INSERT INTO produto(id_produto, nome, descricao, valor)                 VALUES(prodIdSeq.nextval, 'Escova de Dente',   'Para escovar os dentes',       2.00);
+INSERT INTO produto(id_produto, nome, descricao, valor)                 VALUES(prodIdSeq.nextval, 'Shampoo',           'Para lavar o cabelo',          8.00);
+INSERT INTO produto(id_produto, nome, descricao, valor, id_frigobar)    VALUES(prodIdSeq.nextval, 'Chocolate',         'Gostoso',                      20.00, 2);
+INSERT INTO produto(id_produto, nome, descricao, valor, id_bar)         VALUES(prodIdSeq.nextval, 'Absolut Vodka',     'DRINK ME!',                    80.00, 4);
+INSERT INTO produto(id_produto, nome, valor, id_frigobar)               VALUES(prodIdSeq.nextval, 'Masculinidade',     1000.00, 2);
+INSERT INTO produto(id_produto, nome, valor, id_lavanderia)             VALUES(prodIdSeq.nextval, 'Roupa Limpa',       10.00, 3);
 
 --- vendas
 INSERT INTO venda(id_produto, id_quarto, quantidade) VALUES(1, 2, 3);
@@ -171,7 +191,7 @@ INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(5, '0000
 INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(6, '00000000006', 6,   'nao sei se volto mais vezes, mas o servico estava bom');
 INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(3, '00000000007', 3,   'nao gostei');
 INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(4, '00000000008', 7,   'foi bom');
-INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(5, '00000000009', 9,   'TOP');
+INSERT INTO avaliacao(id_servico, cpf_cliente, nota, comentario) VALUES(5, '00000000009', 9,   'POT');
 
 --- telefone
 INSERT INTO telefone(telefone, cpf_cliente) VALUES('83998647582', '00000000001');
@@ -215,13 +235,20 @@ INSERT INTO estacionamento(id_estacionamento) VALUES(29);
 INSERT INTO estacionamento(id_estacionamento) VALUES(30);
 
 --- nota_fiscal
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00001,  '00000000001', 1, '03-30-2016', '04-03-2016', 616);
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00002,  '00000000002', 2, '01-07-2016', '01-28-2016', 2268);
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00003,  '00000000003', 3, '06-16-2017', '06-17-2017', 1328);
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00004,  '00000000004', 4, '01-20-2016', '02-20-2016', 6261);
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00005,  '00000000005', 5, '07-15-2016', '07-22-2016', 398);
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00006,  '00000000006', 1, '12-13-2016', '12-19-2016', 685);
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00007,  '00000000007', 2, '03-10-2017', '03-19-2017', 1043);
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00008,  '00000000008', 3, '01-07-2016', '01-10-2016', 1663);
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00009,  '00000000009', 4, '06-09-2017', '08-09-2017', 12262);
-INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(00010,  '00000000010', 5, '12-30-2017', '01-07-2018', 2445);
+CREATE SEQUENCE nfIdSeq
+  MINVALUE 1
+  MAXVALUE 99999
+  START WITH 1
+  INCREMENT BY 1
+  ORDER 
+  NOCYCLE;
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000001', 1, '03-30-2016', '04-03-2016', 616);
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000002', 2, '01-07-2016', '01-28-2016', 2268);
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000003', 3, '06-16-2017', '06-17-2017', 1328);
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000004', 4, '01-20-2016', '02-20-2016', 6261);
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000005', 5, '07-15-2016', '07-22-2016', 398);
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000006', 1, '12-13-2016', '12-19-2016', 685);
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000007', 2, '03-10-2017', '03-19-2017', 1043);
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000008', 3, '01-07-2016', '01-10-2016', 1663);
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000009', 4, '06-09-2017', '08-09-2017', 12262);
+INSERT INTO nota_fiscal(id_nota, cpf_cliente, id_quarto, dt_in, dt_out, valor_nota) VALUES(TO_CHAR(nfIdSeq.nextval, 'FM00000'),  '00000000010', 5, '12-30-2017', '01-07-2018', 2445);
